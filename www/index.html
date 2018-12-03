@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline';img-src * 'self' data: https:; media-src *; connect-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://ajax.googleapis.com ">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline';img-src * 'self' data: https:; media-src *; connect-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://ajax.googleapis.com https://www.youtube.com https://s.ytimg.com/yts/jsbin/www-widgetapi-vfl8_u944/www-widgetapi.js http://renatooromao-blog.azurewebsites.net https://cdn.firebase.com https://lets-tags.firebaseio.com https://s-usc1c-nss-216.firebaseio.com/ https://s-usc1c-nss-215.firebaseio.com; frame-src *;">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -19,6 +19,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	 <script src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
 
     <!-- Your app title -->
     <title>Let's Tags</title>
@@ -43,17 +47,21 @@
     <div class="panel-overlay"></div>
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
-        <div class="content-block">
+        <div class="content-block" style="font-size:17px;">
              <div class="block">
 	  <div class="logo-menu">
 							<img src="img/logo.gif"/>
 						</div>
-        <p><a class="panel-close" href="index.html">Inicio</a></p>
-        <p><a class="panel-open" href="login.html" data-panel="right">Login</a></p>
-        <p><a class="panel-open" href="scan.html" data-panel="right">Scan</a></p>
-        <p><a class="panel-open" href="cad.html" data-panel="right">Cadastre-se</a></p>
-        <p><a class="panel-open" href="cupons.html" data-panel="right">Cupons</a></p>
-        <p><a class="panel-open" href="sair.html" data-panel="right">Sair</a></p>
+        <p><i class="fa fa-home" aria-hidden="true"></i> <a class="panel-close" href="index.html">Inicio</a></p>
+        <p><i class="fa fa-users" aria-hidden="true"></i> <a class="panel-open" href="seguindo.html">Seguindo</a></p>
+        <p><i class="fa fa-star" aria-hidden="true"></i> <a class="panel-open" href="favoritos.html">Favoritos</a></p>
+        <p><i class="fa fa-comments" aria-hidden="true"></i> <a class="panel-open" href="contatos.html">Chat</a></p>
+        <p><i class="fa fa-sign-in" aria-hidden="true"></i> <a class="panel-open loginmenu" href="login.html" data-panel="right">Login</a></p>
+        <p><i class="fa fa-user-plus" aria-hidden="true"></i> <a class="panel-open" href="cadastro.html" data-panel="right">Cadastre-se</a></p>
+        <p><i class="fa fa-diamond" aria-hidden="true"></i> <a class="panel-open" href="cupons.html" data-panel="right">Cupons</a></p>
+        <p><i class="fa fa-sign-out" aria-hidden="true"></i> <a class="panel-close" onClick="logout()">Sair</a></p>
+		<p style="display:none" class="idvideo" ></p>
+		<p style="display:none" class="verificacodigo" ></p>
       </div>
         </div>
     </div>
@@ -88,41 +96,44 @@
 						</div>
                             <!-- Link to another page -->
                            <a href="javascript:scan();"><div class="scan">
+						   
 							<img src="img/qrcode_normal.png" />
 						   </div></a>
-						    <a href="player.html" ><button>Display Scanned Data</button></a>
+						   
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
+			 <!-- Bottom Toolbar-->
+            <div class="toolbar sociais">
                 <div class="toolbar-inner">
                     <!-- Toolbar links -->
-                    <a href="player.html" class="link color-white">Favoritos</a>
-                    <a href="#" class="link color-white">Chat</a>
+                    <a class="link color-white compartilhar" id="btnCompartilhar"><i class="fa fa-share-alt" aria-hidden="true"></i><span></span> Compartilhar</a>
+                    <a onClick="curtir()" class="link color-white curtir"><i class="fa fa-heart-o" aria-hidden="true"></i><span></span> Curtir</a>
                 </div>
             </div>
+			
+			<div class="toolbar fav hidden" >
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="favoritos.html" class="link color-white"><i class="fa fa-star" aria-hidden="true"></i><span></span>Favoritos</a>
+                    <a href="seguindo.html" class="link color-white"><i class="fa fa-users" aria-hidden="true"></i><span></span>Seguindo</a>
+                </div>
+            </div>
+           
+			
         </div>
     </div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	
-	<script>
-	if(localStorage.getItem("LocalData") == null)
-{
-    var data = [];
-    data = JSON.stringify(data);
-    localStorage.setItem("LocalData", data);
-}
-	</script>
-	
-	<script>
-	
-	</script>
+<script type="text/javascript" src="http://renatooromao-blog.azurewebsites.net/js/SocialSharing.js"></script>
+
+<script>
+
+</script>
+	 
 </body>
 
 </html>

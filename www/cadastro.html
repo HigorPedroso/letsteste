@@ -1,0 +1,60 @@
+<div class="pages">
+<div data-page="cadastro" class="page no-navbar no-toolbar no-swipeback">
+  <div class="page-content login-screen-content">
+    <div class="login-screen-title">Cadastro Let's Tags</div>
+    <form>
+      <div class="list-block">
+        <ul>
+		<li class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">Nome</div>
+              <div class="item-input">
+                <input type="text" class="username" name="username" placeholder="Seu nome completo" />
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">Email</div>
+              <div class="item-input">
+                <input type="text" class="email" name="email" placeholder="Seu email" required validate />
+              </div>
+            </div>
+          </li>
+		    <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">Confirme email</div>
+              <div class="item-input">
+                <input type="text" class="confirmemail" name="email" placeholder="Confirme seu email" required validate />
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">Senha</div>
+              <div class="item-input">
+                <input type="password" class="senha" name="password" placeholder="Sua senha" required validate />
+              </div>
+            </div>
+          </li>
+		  <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title label">Confirme senha</div>
+              <div class="item-input">
+                <input type="password" class="confirmsenha" name="confirmpassword" placeholder="Confirme sua senha" required validate />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="signup">
+        <p><a onClick="cadastrar()" class="button button-big list-button">CADASTRAR</a></p>
+		<p><a onClick="voltar()" class="back button button-big list-button">VOLTAR</a></p>
+        <!--<div class="list-block-label">
+          <p>Click Sign In to close Login Screen</p>
+        </div>-->
+      </div>
+    </form>
+  </div>
+</div>   
+</div>

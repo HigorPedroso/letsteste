@@ -10,6 +10,10 @@
    See https://github.com/apache/cordova-plugin-statusbar
 */
 
+.align{
+	text-align:center;
+}
+
 .statusbar-overlay {
     background: #000000;
 }
@@ -20,6 +24,10 @@
 
 .navbar, .subnavbar, .toolbar{
 	background: #006400;
+}
+
+.navbar:after{
+	background:transparent;
 }
 
 .panel{
@@ -68,4 +76,50 @@
 	max-width:150px;
 	max-height:150px;
 	 
+}
+
+.padding0{
+padding:0;
+}
+
+.answers p{
+	padding-left:30px;
+	padding-right:30px;
+}
+
+.plus p{
+	padding-left:30px;
+	padding-right:30px;
+}
+
+.login p{
+	padding-left:30px;
+	padding-right:30px;
+}
+
+.signup  p{
+	padding-left:30px;
+	padding-right:30px;
+}
+
+.seguir  p{
+	padding-left:50px;
+	padding-right:50px;
+}
+
+.ops  p{
+	padding-left:50px;
+	padding-right:50px;
+}
+
+.messages-content{
+	height:90%;
+}
+
+.message{
+	max-width:100%;
+}
+
+.send{
+	line-height:0;
 }
