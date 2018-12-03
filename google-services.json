@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "644677798778",
+    "firebase_url": "https://lets-tags.firebaseio.com",
+    "project_id": "lets-tags",
+    "storage_bucket": "lets-tags.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644677798778:android:846293f4ac0c2ae5",
+        "android_client_info": {
+          "package_name": "com.phonegap.letstags"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644677798778-54im2cv0f0s0sql0t5e5bljtttgnkl30.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbTEuXybtxA1H98F7-at0DV2uxfcuSAIw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
