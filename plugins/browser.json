@@ -15,7 +15,21 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.phonegap.letstags"
+        },
+        "cordova-plugin-firebase": {
+            "PACKAGE_NAME": "com.phonegap.letstags"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "4549769331",
+            "PACKAGE_NAME": "com.phonegap.letstags"
+        },
+        "cordova-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.phonegap.letstags"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.phonegap.letstags"
+        }
+    }
 }

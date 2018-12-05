@@ -22,5 +22,39 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-firebase": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-firebase@^2.0.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "phonegap-plugin-push": {
+        "source": {
+            "type": "registry",
+            "id": "phonegap-plugin-push@~1.8.0"
+        },
+        "is_top_level": true,
+        "variables": {
+            "SENDER_ID": "4549769331"
+        }
+    },
+    "cordova-plugin-barcodescanner": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-barcodescanner@0.7.4"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
+        "variables": {}
     }
 }
